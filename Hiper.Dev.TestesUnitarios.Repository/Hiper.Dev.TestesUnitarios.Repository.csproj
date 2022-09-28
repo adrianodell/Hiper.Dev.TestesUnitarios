@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Hiper.Dev.TestesUnitarios.Domain\Hiper.Dev.TestesUnitarios.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
