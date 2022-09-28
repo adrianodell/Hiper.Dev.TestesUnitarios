@@ -59,6 +59,7 @@ namespace Hiper.Dev.TestesUnitarios.Services.Pessoas
             try
             {
                 var pessoa = await _pessoasRepository.GetByIdAsync(dto.Id);
+
                 pessoa.SetDataDeNascimento(dto.DataDeNascimento);
                 pessoa.SetNome(dto.Nome);
                 pessoa.SetSexo(dto.Sexo);
