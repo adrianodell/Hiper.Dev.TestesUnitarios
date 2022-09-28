@@ -5,7 +5,13 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Dev.TestesUnitarios.Api", "Hiper.Dev.TestesUnitarios.Api\Hiper.Dev.TestesUnitarios.Api.csproj", "{8409B0D1-C8D3-4A58-90EE-E22FABEB74F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Dev.TestesUnitarios.Tests", "Hiper.Dev.TestesUnitarios.Tests\Hiper.Dev.TestesUnitarios.Tests.csproj", "{8A360C6B-1B80-4551-BF6B-A56640637F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Dev.TestesUnitarios.Tests", "Hiper.Dev.TestesUnitarios.Tests\Hiper.Dev.TestesUnitarios.Tests.csproj", "{8A360C6B-1B80-4551-BF6B-A56640637F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Dev.TestesUnitarios.Domain", "Hiper.Dev.TestesUnitarios.Domain\Hiper.Dev.TestesUnitarios.Domain.csproj", "{EC4D8D99-2627-4266-B60F-8FB2EEC4783A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Dev.TestesUnitarios.Repository", "Hiper.Dev.TestesUnitarios.Repository\Hiper.Dev.TestesUnitarios.Repository.csproj", "{315FB4FF-D639-4C7B-AABA-3260792E7918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Dev.TestesUnitarios.Services", "Hiper.Dev.TestesUnitarios.Services\Hiper.Dev.TestesUnitarios.Services.csproj", "{A5C34163-C3CD-42BC-8B84-27B9A06A8D83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{8A360C6B-1B80-4551-BF6B-A56640637F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A360C6B-1B80-4551-BF6B-A56640637F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A360C6B-1B80-4551-BF6B-A56640637F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4D8D99-2627-4266-B60F-8FB2EEC4783A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4D8D99-2627-4266-B60F-8FB2EEC4783A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4D8D99-2627-4266-B60F-8FB2EEC4783A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4D8D99-2627-4266-B60F-8FB2EEC4783A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315FB4FF-D639-4C7B-AABA-3260792E7918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315FB4FF-D639-4C7B-AABA-3260792E7918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315FB4FF-D639-4C7B-AABA-3260792E7918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315FB4FF-D639-4C7B-AABA-3260792E7918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C34163-C3CD-42BC-8B84-27B9A06A8D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C34163-C3CD-42BC-8B84-27B9A06A8D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C34163-C3CD-42BC-8B84-27B9A06A8D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C34163-C3CD-42BC-8B84-27B9A06A8D83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
