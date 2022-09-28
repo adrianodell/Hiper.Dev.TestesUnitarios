@@ -2,9 +2,9 @@
 {
     public class PessoaDto
     {
-        public DateOnly DataDeNascimento { get; set; }
+        public ICollection<string> Erros = new List<string>();
 
-        public ICollection<string> Erros { get; set; }
+        public DateOnly DataDeNascimento { get; set; }
 
         public Guid Id { get; set; }
 
