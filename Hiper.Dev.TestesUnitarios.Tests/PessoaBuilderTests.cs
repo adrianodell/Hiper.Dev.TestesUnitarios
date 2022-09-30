@@ -6,19 +6,17 @@ namespace Hiper.Dev.TestesUnitarios.Tests
 {
     public class PessoaBuilderTests
     {
-        private readonly Faker _faker;
+        private static readonly Faker _faker = new Faker("pt_BR");
 
         public PessoaBuilderTests()
         {
-            _faker = new Faker("pt_BR");
+            //_faker = new Faker("pt_BR");
         }
 
-        private static IEnumerable<object[]> Parametros
+        private static IEnumerable<object[]> Parametros()
         {
-            get
+            yield return new object[]
             {
-                yield return new object[]
-                {
                     DateOnly.MinValue,
                     Guid.Empty,
                     string.Empty,
@@ -29,22 +27,21 @@ namespace Hiper.Dev.TestesUnitarios.Tests
                     Pessoa.ErroNomeNaoInformado,
                     Pessoa.ErroRendaMensalInvalida,
                     Pessoa.ErroSexoInvalido
-                };
+            };
 
-                yield return new object[]
-                {
+            yield return new object[]
+            {
                     DateOnly.FromDateTime(DateTime.Now.AddDays(1)),
                     Guid.Empty,
-                    "MADFKMDAFKDKAFMDKAMFKASDMFKASDMFKDASMFKASDMFKDASMFKASDMFKASDMFKDASMFKASMDFKASMDFKDASMFKASMDFKDASMFKASDMFKDMASFKDMASKFMDKASMFKDMFA",
+                    _faker.Random.AlphaNumeric(Pessoa.NomeMaxLength + 1),
                     (decimal)-1,
-                    "MF",
+                    _faker.Random.AlphaNumeric(Pessoa.SexoMaxLength + 1),
                     Pessoa.ErroDataDeNascimentoInvalida,
                     Pessoa.ErroIdInvalido,
                     Pessoa.ErroNomeMaxLength,
                     Pessoa.ErroRendaMensalInvalida,
                     Pessoa.ErroSexoMaxLength
-                };
-            }
+            };
         }
 
         [Theory(DisplayName = "Criar pessoa com dados inválidos retorna erros"), MemberData(nameof(Parametros))]
@@ -63,9 +60,9 @@ namespace Hiper.Dev.TestesUnitarios.Tests
             Assert.NotEmpty(pessoa.GetErros());
             Assert.Contains(erroDataDeNascimento, pessoa.GetErros());
             Assert.Contains(erroId, pessoa.GetErros());
-            Assert.Contains(erroNome, pessoa.GetErros());
+            Assert.Contains(pessoa.GetErros(), x => x.Contains(erroNome));
             Assert.Contains(erroRenda, pessoa.GetErros());
-            Assert.Contains(erroSexo, pessoa.GetErros());
+            Assert.Contains(pessoa.GetErros(), x => x.Contains(erroSexo));
         }
 
         [Fact(DisplayName = "Criar pessoa com dados válidos retorna pessoa")]
