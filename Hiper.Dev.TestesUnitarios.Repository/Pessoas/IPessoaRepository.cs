@@ -6,7 +6,7 @@ namespace Hiper.Dev.TestesUnitarios.Repository.Pessoas
     {
         Task AddAsync(Pessoa pessoa);
 
-        Task<List<Pessoa>> GetAllAsync(Func<Pessoa, bool> where);
+        Task<List<Pessoa>> GetAllAsync(Func<Pessoa, bool>? where);
 
         Task<Pessoa> GetByIdAsync(Guid id);
 

@@ -9,7 +9,7 @@ namespace Hiper.Dev.TestesUnitarios.Repository.Pessoas
         {
         }
 
-        public async Task<List<Pessoa>> GetAllAsync(Func<Pessoa, bool> where)
+        public async Task<List<Pessoa>> GetAllAsync(Func<Pessoa, bool>? where)
         {
             var pessoas = new List<Pessoa>();
 

@@ -5,17 +5,21 @@
         public const string ErroDataDeNascimentoInvalida = "Data de nascimento inválida.";
         public const string ErroIdInvalido = "Id inválido.";
         public const string ErroNomeNaoInformado = "Nome não informado.";
+        public const string ErroRendaMensalInvalida = "Renda mensal inválida.";
         public const string ErroSexoInvalido = "Sexo inválido.";
+        public const string ErroSexoMaxLength = "Número de carácteres do sexo maior que ";
+        public const int SexoMaxLength = 1;
         private readonly ICollection<string> SexosValidos = new List<string>() { "M", "F" };
 
         private ICollection<string> Erros = new List<string>();
 
-        public Pessoa(DateOnly dataDeNascimento, Guid id, string nome, string sexo)
+        public Pessoa(DateOnly dataDeNascimento, Guid id, string nome, string sexo, decimal rendaMensal)
         {
             SetDataDeNascimento(dataDeNascimento);
             SetId(id);
             SetNome(nome);
             SetSexo(sexo);
+            SetRendaMensal(rendaMensal);
         }
 
         public DateOnly DataDeNascimento { get; private set; }
@@ -23,6 +27,8 @@
         public Guid Id { get; private set; }
 
         public string Nome { get; private set; }
+
+        public decimal RendaMensal { get; private set; }
 
         public string Sexo { get; private set; }
 
@@ -69,8 +75,25 @@
             Nome = nome;
         }
 
+        public void SetRendaMensal(decimal rendaMensal)
+        {
+            if (rendaMensal < 0)
+            {
+                AddErro(ErroRendaMensalInvalida);
+                return;
+            }
+
+            RendaMensal = rendaMensal;
+        }
+
         public void SetSexo(string sexo)
         {
+            if (sexo.Length > SexoMaxLength)
+            {
+                AddErro($"{ErroSexoMaxLength}{SexoMaxLength}");
+                return;
+            }
+
             if (!SexosValidos.Contains(sexo))
             {
                 AddErro(ErroSexoInvalido);
